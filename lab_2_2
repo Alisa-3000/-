@@ -1,1 +1,35 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
 
+/*Задача №4 на С++: Дано целое число. Определить, кратно ли произведение его цифр заданному числу а*/
+
+
+int main() {
+    int a, n, res ;
+    cout <<"Пргорамма определяет кратно ли произведение цифр числа n другому числу a"<<endl;
+    cout << "Введите целые числа n и a: ";
+    cin >>n>>a;
+    res=1;
+  
+    if (n == 0) {
+        cout<<"\nДа, кратно"<<endl;
+        exit(0); 
+    }
+  
+    if (a == 0) {
+        cout<<"\nНа 0 делить нельзя"<<endl;
+        exit(0); 
+    }
+  
+    if (n < 0) n = abs(n); 
+    if (a < 0) a = abs(a);
+ 
+    while (n > 0) {
+        res *= n % 10;
+        n /= 10;
+    }
+    
+    if (res%a == 0) cout << "\nДа, кратно";
+    else cout << "\nНе кратно";
+}
