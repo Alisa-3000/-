@@ -7,14 +7,14 @@ using namespace std;
 
 int main() {
     float a, b, h=0.3;
-    cout <<"Пргорамма находит наибольшее и наименьшее значение функции y=x^2+2*x-5, если на заданном интервале [a, b] x изменяется с шагом h=0.3"<<endl;
+    cout <<"Программа находит наибольшее и наименьшее значение функции y=x^2+2*x-5, если на заданном интервале [a, b] x изменяется с шагом h=0.3"<<endl;
     
     cout << "Введите границы интервала [a, b]: ";
     cin >> a >> b;
     if (a > b) {
         swap(a, b);
     }
-    double num_steps_double = round((b - a) / h); // Используем round для округления
+    double num_steps_double = round((b - a) / h); 
     int num_steps = (int) num_steps_double;  
     // Обработка ошибки округления:
     if (num_steps * h < (b-a)) {
