@@ -1,1 +1,18 @@
+#include <stdio.h>
+/*Задача №21 на СИ: Дано натуральное n. Вычислить: 1/22+1/42+…1/(2n)n.*/
 
+int main() {
+    printf("Программа вычисляет 1/22+1/42+…1/(2n)n\n");
+    int n, i=1;
+    float s=0.0;
+    printf("Введите натуральное число n\n");
+    scanf("%d", &n);
+    while (i <= n) {
+        char n_str[100]; 
+        sprintf(n_str, "%d%d", 2 * i, i); 
+        long n = atoll(n_str); 
+        s += 1.0 / n;
+        i++;
+    }
+    printf("Сумма ряда: %lf\n", s);
+}
