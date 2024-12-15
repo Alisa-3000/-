@@ -1,4 +1,4 @@
-//Lytskaya Alisa NKAbd-03-24
+//Lytskaya Alisa NKAbd-03-24 Линейная структура
 #include <stdio.h>
 //Задача № 23 В параллелограмме ABCD точка E делит диагональ BD пополам. Найти отношение площадей треугольника ABE и ECD
 
