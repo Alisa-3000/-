@@ -1,1 +1,54 @@
+#include <stdio.h>
+#include <limits.h> 
+#define LIM 30
+/*Задача №12 на СИ: Дана матрица размера M x N. В каждом столбце матрицы
+найти максимальный из четных элементов.*/
+int main() {
+    int matrix[LIM][LIM];
+    int M, N, i, j, ma, f=0;
+    
+     printf("Программа выводит максимальные четные элементы в каждом столбце матрицы.\n");
 
+    do{
+        printf("Введите количество строк (0 < M < %d): ", LIM);
+        scanf("%d", &M);
+    } while (M <= 0 || M > LIM);
+
+    do{
+        printf("Введите количество столбцов (0 < N < %d): ", LIM);
+        scanf("%d", &N);
+    } while (N <= 0 || N > LIM);
+
+    printf("Введите элементы матрицы:\n");
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    printf("Исходная матрица:\n");
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++) {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    
+    printf("Максимальные четные элементы в столбцах:\n");
+    for (j = 0; j < N; j++) {
+        for (i = 0; i < M; i++) {
+            if (matrix[i][j] % 2 == 0) {
+                f = 1;
+                if (matrix[i][j] > ma) {
+                    ma = matrix[i][j];
+                }
+            }
+        }
+
+        if (f) {
+            printf("Столбец %d: %d\n", j, ma);
+        } 
+        else {
+            printf("Столбец %d: Нет четных элементов\n", j);
+        }
+    }
+}
