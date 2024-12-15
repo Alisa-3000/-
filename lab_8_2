@@ -1,1 +1,48 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+#define LIM 30
 
+int main() {
+    int matrix[LIM][LIM], m, n, i, j, miR = 0, maR = 0, miV = matrix[0][0], maV = matrix[0][0];
+    cout << endl << "Программа меняет местами строки с минимальным и максимальным элементами матрицы." << endl;
+    do {
+        cout << "Введите число строк (0 < m <= " << LIM << "): \n";
+        cin >> m;
+    } while (m <= 0 || m > LIM);
+
+    do {
+        cout << "Введите число столбцов (0 < n <= " << LIM << "): \n";
+        cin >> n;
+    } while (n <= 0 || n > LIM);
+
+    cout << "Введите элементы матрицы" << endl;
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    for (i = 0; i < m; ++i) {
+        for (j = 0; j < n; ++j) {
+            if (matrix[i][j] < miV) {
+                miV = matrix[i][j];
+                miR = i;
+            }
+            if (matrix[i][j] > maV) {
+                 maV = matrix[i][j];
+                 maR = i;
+            }
+        }
+    }
+
+    if(miR != maR){
+        swap(matrix[miR],matrix[maR]);
+    }
+    cout << "Ответ:" << endl;
+     for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            cout << matrix[i][j] << " ";
+        }
+    }
+}
