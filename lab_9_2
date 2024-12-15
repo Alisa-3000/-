@@ -2,6 +2,7 @@
 #include <string>
 #include <algorithm>
 using namespace std;
+/*Задача №4 на С++: Программа выполнения логической операции "штрих Шеффера" (Отрицание конъюнкции) */
 
 bool Palindrom(int num) {
     string nstr = to_string(num);
