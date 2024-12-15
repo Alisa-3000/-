@@ -1,1 +1,28 @@
+#include <stdio.h>
+#include <stdbool.h>
+#define LIM 100
+/*Задача №16 на СИ: Включить заданное число D в массив A(N), упорядоченный по возрастанию, с сохранением упорядоченности. */
+bool Sort(int a[], int *n, int d) {
+    int i = *n - 1;
+    while (i >= 0 && a[i] > d) {
+        a[i + 1] = a[i];
+        i--;
+    }
+    a[i + 1] = d;
+    (*n)++;
+    return true;
+}
 
+int main() {
+    int a[LIM] = {1, 3, 5, 7, 9, 10, 12, 14, 16}, n = 9, d;
+    
+    printf("Введите число для вставки\n");
+    scanf("%d", &d);
+
+    Sort(a, &n, d);
+
+    printf("Новый массив: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+}
