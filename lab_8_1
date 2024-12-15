@@ -1,3 +1,4 @@
+//Lytskaya Alisa NKAbd-03-24 Матрицы данных СИ
 #include <stdio.h>
 #include <limits.h> 
 #define LIM 30
