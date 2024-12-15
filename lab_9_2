@@ -1,1 +1,23 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
 
+bool Palindrom(int num) {
+    string nstr = to_string(num);
+    string r = nstr;
+    reverse(r.begin(), r.end());
+    return nstr == r;
+}
+
+int main() {
+    int num;
+    cout << "Введите число \n";
+    cin >> num;
+
+    if (Palindrom(num)) {
+        cout << "Палиндром" << endl;
+    } else {
+        cout << "Не палиндром" << endl;
+    }
+}
